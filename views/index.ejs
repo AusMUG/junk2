@@ -1,6 +1,12 @@
 <% include header.ejs %> 
 
+<div data-ng-app="anNgApp">
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
-  </body>
-</html>
+
+    <div data-ng-controller="ngController1 as controller" data-ng-init="controller.data=<%=data%>">
+      <p>{{controller.data[0].name}}</p>
+    </div>
+
+</div>
+
