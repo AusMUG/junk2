@@ -1,0 +1,25 @@
+language: node_js
+env: IN_TRAVIS=true
+node_js:
+- '0.12'
+
+branches:
+  only:
+    - master
+before_install:
+
+install: npm install
+
+before_script:
+  - npm run jshint
+  - npm test
+  - JASMINE_CONFIG_PATH=./jasmine.json
+  - export JASMINE_CONFIG_PATH
+  - grunt run:jasmine
+
+notifications:
+  email:
+    recipients:
+    - cdnadmin@collaborare.net
+    on_success: never
+    on_failure: always

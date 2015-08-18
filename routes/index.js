@@ -6,7 +6,7 @@ var UserModel = require('../dstore/UserModel');
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
-  saveData();  
+  //saveData();  
 
   res.render('index', {
    title: 'Express' , data: JSON.stringify([{name:"monico moreno", id:123}, {name: "john doe", id:231}])
